@@ -12,6 +12,7 @@ ExecStart=-/sbin/agetty -o '-p -- samuele' --noclear --skip-login - $TERM
 ## Select DM
 Launch display manager
 ```bash
+# $HOME/.zlogin
 if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec tbsm
 fi
