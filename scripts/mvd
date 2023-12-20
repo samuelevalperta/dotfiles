@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Function to display the help message
+display_help() {
+    echo "Usage: mvd [n]"
+    echo "Move the last added n files from \$HOME/Downloads/ to the working directory."
+    echo "If n is not provided, it defaults to 1."
+}
+
+# Check if "help" is provided as an argument
+if [ "$1" == "help" ]; then
+    display_help
+    exit 0
+fi
+
+# Set n to the first argument or default to 1
+n=${1:-1}
+
+# Check if the working directory is not empty
+if [ ! -d "$HOME/Downloads" ]; then
+    echo "Error: $$HOME/Downloads/ directory does not exist."
+    exit 1
+fi
+
+# Move the last added X files to the working directory
+files_to_move=($(ls -t "$HOME/Downloads" | head -n $n))
+for file in "${files_to_move[@]}"; do
+    mv "$HOME/Downloads/$file" .
+done
+
+echo "Moved $n files from \$HOME/Downloads/ to the working directory."
+

@@ -1,0 +1,5 @@
+font= 16
+[urgency=high]
+anchor=center
+default-timeout=0
+
