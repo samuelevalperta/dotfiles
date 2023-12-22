@@ -6,6 +6,7 @@ Don't ask for username on startup
 ```bash
 # /etc/systemd/system/getty@tty1.service.d/skip-username.conf
 [Service]
+ExecStart=
 ExecStart=-/sbin/agetty -o '-p -- samuele' --noclear --skip-login - $TERM
 ```
 
