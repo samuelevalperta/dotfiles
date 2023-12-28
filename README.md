@@ -10,12 +10,12 @@ ExecStart=
 ExecStart=-/sbin/agetty -o '-p -- samuele' --noclear --skip-login - $TERM
 ```
 
-## Select DM
-Launch display manager
+## Compositor
+Launch sway
 ```bash
 # $HOME/.zlogin
 if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec tbsm
+  exec sway
 fi
 ```
 
