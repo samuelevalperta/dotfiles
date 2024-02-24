@@ -3,7 +3,7 @@
 # Function to display the help message
 display_help() {
     echo "Usage: mvd [n]"
-    echo "Move the last added n files from \$HOME/Downloads/ to the working directory."
+    echo "Move the last added n files from $HOME/Downloads/ to the working directory."
     echo "If n is not provided, it defaults to 1."
 }
 
@@ -18,7 +18,7 @@ n=${1:-1}
 
 # Check if the working directory is not empty
 if [ ! -d "$HOME/Downloads" ]; then
-    echo "Error: $$HOME/Downloads/ directory does not exist."
+    echo "Error: $HOME/Downloads/ directory does not exist."
     exit 1
 fi
 
@@ -28,5 +28,6 @@ for file in "${files_to_move[@]}"; do
     mv "$HOME/Downloads/$file" .
 done
 
-echo "Moved $n files from \$HOME/Downloads/ to the working directory."
+echo "Moved $n files from $HOME/Downloads/ to the working directory."
+
 
