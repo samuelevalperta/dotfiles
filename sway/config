@@ -54,9 +54,7 @@ output * bg #181818 solid_color
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed.
 exec swayidle -w \
-         timeout 300 'swaylock --screenshot --effect-pixelate 8x8 --effect-greyscale' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock --screenshot --effect-pixelate 8x8 --effect-greyscale'
+         timeout 300 'swaylock --screenshot --effect-pixelate 8x8 --effect-greyscale'
 
 
 #   _____                   _   

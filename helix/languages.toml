@@ -9,3 +9,11 @@ file-types = ["c", "h"]
 
 [language-server.c]
 command = "clangd"
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[[language]]
+name = "rust"
+auto-format = true
+

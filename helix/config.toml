@@ -6,11 +6,22 @@ j = { k = "normal_mode" }
 [keys.normal]
 g = { a = "code_action" }
 esc = ["collapse_selection", "keep_primary_selection"]
+
+# Move up or down the current line
 "A-j" = [ "extend_to_line_bounds", "delete_selection", "paste_after" ]
 "A-k" = [ "extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before" ]
 
+# Unselect last selected line of a block
+A-x = "extend_to_line_bounds"
+X = ["extend_line_up", "extend_to_line_bounds"]
+
+[keys.select]
+# Unselect last selected line of a block
+A-x = "extend_to_line_bounds"
+X = ["extend_line_up", "extend_to_line_bounds"]
+
 [keys.normal.space]
-w = ":write"
+w = ":update"
 q = ":quit"
 
 [editor]
@@ -22,7 +33,5 @@ true-color = true
 [editor.lsp]
 display-messages = true
 
-[editor.whitespace]
-render = "none"
 [editor.indent-guides]
 render = false
