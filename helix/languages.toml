@@ -4,7 +4,7 @@ language-id = "c"
 scope = "source.c"
 auto-format = true
 comment-token = "//"
-indent = { tab-width = 4, unit = " " }
+indent = { tab-width = 4, unit = "  " }
 file-types = ["c", "h"]
 
 [language-server.c]
