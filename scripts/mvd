@@ -16,7 +16,14 @@ fi
 # Set n to the first argument or default to 1
 n=${1:-1}
 
-# Check if the working directory is not empty
+# Check is the argument provided is a number
+if ! [[ $n =~ ^[0-9]+$ ]]; then
+    echo "Error: The argument provided is not a number."
+    display_help
+    exit 1
+fi
+
+# Check if the directory is not empty
 if [ ! -d "$HOME/Downloads" ]; then
     echo "Error: $HOME/Downloads/ directory does not exist."
     exit 1
