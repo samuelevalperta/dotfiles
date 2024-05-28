@@ -12,3 +12,5 @@
 !/tmux/
 !/wofi/
 !/.gitignore
+!/etc/
+!/gitui/
