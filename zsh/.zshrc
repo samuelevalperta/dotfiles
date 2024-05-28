@@ -105,3 +105,14 @@ fi
 # Example aliases
 alias ls="ls --color=auto"
 alias hx="helix"
+
+# This alias is needed because libssh2(used by gitui) doesn't parse the .ssh/config
+# alias gitui="unset SSH_CONNECTION SSH_TTY && eval $(ssh-agent) && ssh-add /home/samuele/.ssh/id_ed25519 && /usr/bin/gitui && ssh-agent -k"
+alias gitui='{
+    unset SSH_CONNECTION SSH_TTY && \
+    eval $(ssh-agent) && \
+    ssh-add $HOME/.ssh/id_ed25519 && \
+    /usr/bin/gitui; \
+    ssh-agent -k;
+}'
+
