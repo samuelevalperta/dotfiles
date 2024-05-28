@@ -25,6 +25,7 @@ w = ":update"
 q = ":quit"
 
 [editor]
+bufferline = "multiple"
 auto-save = true
 line-number = "relative"
 auto-format = true
