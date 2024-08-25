@@ -17,3 +17,6 @@ command = "clippy"
 name = "rust"
 auto-format = true
 
+[[language]]
+name = "python"
+language-servers = [ "pyright" ]
